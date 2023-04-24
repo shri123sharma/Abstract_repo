@@ -31,13 +31,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Admin_Field',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'abs_task_1'
+    'abs_task_1',
+    'Task_2',
+    'Multi_Form_Task_3',
+    'Task_3',
+    'Task_4',
+    'Real_Form_Task',
+    'Validate_Admin',
+    'custom_admin',
+
 ]
 
 MIDDLEWARE = [
@@ -55,7 +64,7 @@ ROOT_URLCONF = 'Abstract_Pro.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,8 +85,12 @@ WSGI_APPLICATION = 'Abstract_Pro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Abstract_Pro_Database',
+        'USER': 'postgres',
+        'PASSWORD': 'developer',
+        'HOST': 'localhost',
+        'PORT': 5432
     }
 }
 
@@ -120,3 +133,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'abs_task_1.Account'
+
+
